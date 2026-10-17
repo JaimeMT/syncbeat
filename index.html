@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>my-music-app</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <div class="flex h-screen">
+      <aside class="w-64 bg-gray-800 text-white p-4">
+        <script type="module">
+          import Nav from './src/components/Nav.js';
+          document.getElementById('app').innerHTML += Nav();
+        </script>
+      </aside>
+      <main class="flex-1 p-4">
+        <script type="module">
+          import SearchBar from './src/components/SearchBar.js';
+          document.getElementById('app').innerHTML += SearchBar();
+        </script>
+        <script type="module">
+          import ContentArea from './src/components/ContentArea.js';
+          document.getElementById('app').innerHTML += ContentArea();
+        </script>
+      </main>
+      <footer class="bg-gray-900 text-white p-4">
+        <script type="module">
+          import Player from './src/components/Player.js';
+          document.getElementById('app').innerHTML += Player();
+        </script>
+      </footer>
+    </div>
+  </div>
+  <script type="module" src="/src/App.js"></script>
+</body>
+</html>
